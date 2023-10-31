@@ -159,12 +159,6 @@ function Products() {
               </div>
             </form>
           </div>
-
-          <div className="flex">
-            <button className="flex items-center text-slate-500">
-              <BsSortUp /> <span className=" ml-1">Sort</span>
-            </button>
-          </div>
         </div>
         <table className="mt-5 w-full text-left text-grey-500">
           <thead className="text-xs text-slate-500 capitalize">

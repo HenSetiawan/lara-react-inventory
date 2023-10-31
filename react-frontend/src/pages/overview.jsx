@@ -75,30 +75,6 @@ function Overview() {
             <Chart options={options} series={series} type="area" height={350} />
           </div>
         </div>
-        <div className="bg-white md:w-1/3 w-full shadow mt-5 md:mt-0">
-          <div className="text-center py-4 border-b-2">
-            <p className="text-slate-500 mb-2 text-sm">Resolved</p>
-            <h3 className="font-semibold text-2xl">449</h3>
-          </div>
-          <div className="text-center py-4 border-b-2">
-            <p className="text-slate-500 mb-2 text-sm">Received</p>
-            <h3 className="font-semibold text-2xl">440</h3>
-          </div>
-          <div className="text-center py-4 border-b-2">
-            <p className="text-slate-500 mb-2 text-sm">
-              Avg first response time
-            </p>
-            <h3 className="font-semibold text-2xl">33m</h3>
-          </div>
-          <div className="text-center py-4 border-b-2">
-            <p className="text-slate-500 mb-2 text-sm">Avg response time</p>
-            <h3 className="font-semibold text-2xl">3h 8m</h3>
-          </div>
-          <div className="text-center py-4 border-b-2">
-            <p className="text-slate-500 mb-2 text-sm">Resolution within SLA</p>
-            <h3 className="font-semibold text-2xl">96%</h3>
-          </div>
-        </div>
       </div>
     </div>
   );
