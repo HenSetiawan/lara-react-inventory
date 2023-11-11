@@ -25,9 +25,9 @@ function Products() {
   const [pageCount, setPageCount] = useState(0);
   const [totalProduct, setTotalProduct] = useState(0);
 
-  const handleAllProducts = async () => {
+  const handleAllProducts = async (page) => {
     try {
-      const products = await getAllProducts();
+      const products = await getAllProducts(page);
       setData(products.data.data);
       setPageCount(Math.ceil(products.data.total / 10))
       setTotalProduct(products.data.total)
@@ -42,7 +42,7 @@ function Products() {
         const product = await getProductByName(name);
         setData(product.data);
       } else {
-        handleAllProducts();
+        handleAllProducts(1);
       }
     } catch (error) {
       console.log(error);
@@ -69,6 +69,7 @@ function Products() {
   };
     const handlePageClick = (event) => {
       console.log(event.selected);
+      handleAllProducts(event.selected + 1);
     };
   const columns = [
     columnHelper.accessor("code", {
@@ -133,7 +134,7 @@ function Products() {
   });
 
   useEffect(() => {
-    handleAllProducts();
+    handleAllProducts(1);
   }, []);
   return (
     <div className="container px-4 mt-10">
@@ -208,7 +209,7 @@ function Products() {
             ))}
           </tfoot>
         </table>
-        <div className="flex items-center mt-2 justify-end">
+        <div className="flex items-center mt-2 justify-between w-full">
           <div>
             <p className="text-slate-500 text-sm">Total Products : { totalProduct}</p>
           </div>

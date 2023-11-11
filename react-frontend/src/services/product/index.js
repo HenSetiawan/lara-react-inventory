@@ -1,8 +1,8 @@
 const apiBaseUrl = import.meta.env.VITE_API_BASEURL;
-const getAllProducts = async () => {
+const getAllProducts = async (page) => {
   const token = localStorage.getItem("token");
   try {
-    const response = await fetch(`${apiBaseUrl}/api/v1/products`, {
+    const response = await fetch(`${apiBaseUrl}/api/v1/products?page=${page}`, {
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`,
